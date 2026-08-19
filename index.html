@@ -4,74 +4,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
   <title>Frontend Mentor | Grid landing page</title>
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
   <header class="header">
     <nav class="nav">
-      <a href="#" class="nav-logo">Bridge Collective</a>
-      <button class="nav-menu" aria-expanded="false" aria-label="Open menu">Menu</button>
+      <a href="#" class="nav-logo">
+        <div>
+          <img src="./assets/images/favicon-32x32.png" alt="Bridge Collective" class="nav-logo-img">
+          Bridge Collective
+        </div>
+      </a>
+      <button class="nav-menu" aria-expanded="false" aria-label="Open menu">
+        <img src="./assets/images/icon-menu.svg" alt="Open menu">
+      </button>
     </nav>
   </header>
+
   <main class="main">
     <div class="hero">
       <h1>A classroom for every child.</h1>
-      <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a
-        graduate tomorrow.</p>
+      <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
     </div>
 
     <div class="stats">
       <div class="stat">
-        <div>
-          <!-- icon -->
+        <div class="stat-icon-container">
+          <img src="./assets/images/icon-sparkle.svg" alt="sparkle" class="stat-icon">
           <h2>2.4M</h2>
         </div>
         <div>
-          <p>Students reached</p>
+          <h4>Students reached</h4>
           <p>Across 31 countries since 2011.</p>
         </div>
-
       </div>
+
       <div class="stat">
-        <div>
-          <!-- icon -->
+        <div class="stat-icon-container">
+          <img src="./assets/images/icon-plus.svg" alt="plus" class="stat-icon">
           <h2>1,284</h2>
         </div>
         <div>
-          <p>Schools partnered</p>
+          <h4>Schools partnered</h4>
           <p>In 14 countries, from Kenya to Guatemala.</p>
         </div>
-
       </div>
+
       <div class="stat">
-        <div>
-          <!-- icon -->
+        <div class="stat-icon-container">
+          <img src="./assets/images/icon-arrow-right.svg" alt="arrow right" class="stat-icon">
           <h2>38K</h2>
         </div>
         <div>
-          <p>Teachers trained</p>
+          <h4>Teachers trained</h4>
           <p>Equipped with modern tools and methodology.</p>
         </div>
-
-
       </div>
+
       <div class="stat">
-        <div>
-          <!-- icon -->
+        <div class="stat-icon-container">
+          <img src="./assets/images/icon-trending-up.svg" alt="trending up" class="stat-icon">
           <h2>3.1×</h2>
         </div>
         <div>
-          <p>Graduation lift</p>
+          <h4>Graduation lift</h4>
           <p>Partner schools outperform national averages 3x.</p>
         </div>
-
       </div>
     </div>
   </main>
