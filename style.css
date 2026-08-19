@@ -31,12 +31,22 @@
   padding: 0;
 }
 
+/* Page Layout: Full Viewport Height */
 body {
   font-family: var(--font-family);
   font-size: 17px;
   line-height: 1.5;
   background-color: var(--color-blue-700);
   color: var(--color-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1; /* Expands to fill available vertical space */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Headings Base */
@@ -56,7 +66,7 @@ h2 {
 
 /* Navigation */
 header {
-  padding: 1.5rem;
+  padding: 1.35rem 2rem;
   border-bottom: 1px solid var(--color-blue-400);
 }
 
@@ -89,18 +99,16 @@ nav button {
   background: none;
   border: none;
   font-family: var(--font-family);
-  font-size: 1rem;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero Section (Mobile Default) */
 .hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 51vh;
-  padding: 2rem;
+  padding: 3rem 2rem;
   border-bottom: 1px solid var(--color-blue-400);
 }
 
@@ -111,20 +119,22 @@ nav button {
   font-weight: var(--fw-light);
 }
 
-/* Stats Section */
+/* Stats Section (Mobile Stacked) */
 .stat {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  padding: 2rem;
+  justify-content: space-between;
+  padding: 3rem 2rem;
+  min-height: 320px;
   border-bottom: 1px solid var(--color-blue-400);
-  height: 49vh;
+  background-color: var(--color-blue-700);
 }
 
 .stat p {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--color-blue-200);
   font-weight: var(--fw-regular);
+
 }
 
 .stat h4 {
@@ -134,16 +144,97 @@ nav button {
 .stat-icon-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* Footer & Drawers */
 footer {
-  padding: 1.75rem 2rem;
+  padding: 1.5rem 2rem;
   font-size: 0.75rem;
   color: var(--color-blue-200);
   font-weight: var(--fw-regular);
+  border-top: 1px solid var(--color-blue-400);
 }
 
 .menu-panel {
   display: none;
+}
+
+/* ==========================================================================
+   Tablet View (>= 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Scaled up typography for tablet */
+  h1 {
+    font-size: 4.1rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+
+  .hero {
+    padding: 4rem 3rem;
+  }
+
+  /* 2x2 Stats Grid with Hairline Dividers */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-blue-400);
+    gap: 1px;
+    border-bottom: 1px solid var(--color-blue-400);
+  }
+
+  .stat {
+    background-color: var(--color-blue-700);
+    border-bottom: none;
+    padding: 2rem;
+    min-height: 320px;
+  }
+}
+
+/* ==========================================================================
+   Desktop View (>= 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  nav a{
+    font-size: 0.85rem;
+  }
+  /* 45% Hero / 55% Stats Split */
+  .main {
+    display: grid;
+    grid-template-columns: 45fr 55fr;
+  }
+
+  .hero {
+    border-bottom: none;
+    border-right: 1px solid var(--color-blue-400);
+    padding: 4rem 8rem 4rem 3rem;
+    justify-content: center;
+  }
+
+  .stats {
+    height: 100%;
+    border-bottom: none;
+  }
+
+  .stat {
+    height: 100%;
+  }
+
+  .stat-icon{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
