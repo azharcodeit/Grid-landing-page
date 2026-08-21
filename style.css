@@ -251,6 +251,7 @@ footer {
 
   .hero {
     padding: 4rem 3rem;
+    min-height: 400px;
   }
 
   /* 2x2 Stats Grid with Hairline Dividers */
