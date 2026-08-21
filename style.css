@@ -190,8 +190,7 @@ footer {
 
 .menu-panel-list {
   list-style: none;
-  padding-top: 3.2rem;
-  padding-right: 3.2rem;
+  padding: 3.2rem;
   text-decoration: none;
   font-size: 1.75rem;
   gap: 3rem;
