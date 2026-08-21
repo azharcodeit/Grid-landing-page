@@ -7,6 +7,13 @@ const hero = document.querySelector(".hero");
 navMenuButton.addEventListener("click", function () {
   const isOpen = navMenuButton.getAttribute("aria-expanded") === "true";
 
+  if (!isOpen && window.innerWidth < 1024) {
+    const targetHeight = Math.max(hero.offsetHeight, menuPanel.scrollHeight);
+    menuPanel.style.height = `${targetHeight}px`;
+  } else if (isOpen) {
+    menuPanel.style.height = "";
+  }
+
   navMenuButton.setAttribute("aria-expanded", !isOpen);
   menuPanel.setAttribute("aria-hidden", isOpen);
   menuPanel.classList.toggle("is-open");
@@ -14,16 +21,9 @@ navMenuButton.addEventListener("click", function () {
   overlay.classList.toggle("is-open");
 
   if (isOpen) {
-    menuPanel.style.height = "";
     navMenuIcon.src = "./assets/images/icon-menu.svg";
     navMenuButton.setAttribute("aria-label", "Open menu");
   } else {
-    if (window.innerWidth < 1024) {
-      menuPanel.style.height = `${hero.offsetHeight}px`;
-    } else {
-      menuPanel.style.height = "";
-    }
-
     navMenuIcon.src = "./assets/images/icon-close.svg";
     navMenuButton.setAttribute("aria-label", "Close menu");
   }
