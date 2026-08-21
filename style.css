@@ -263,6 +263,11 @@ footer {
     border-bottom: 1px solid var(--color-blue-400);
   }
 
+  .stat:hover {
+    background-color: var(--color-blue-600);
+    cursor: pointer;
+  }
+
   .stat {
     background-color: var(--color-blue-700);
     border-bottom: none;
