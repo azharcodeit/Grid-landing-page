@@ -156,8 +156,81 @@ footer {
   border-top: 1px solid var(--color-blue-400);
 }
 
+.header-wrapper {
+  position: relative;
+}
+
 .menu-panel {
-  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: var(--color-blue-700);
+  border-bottom: 1px solid var(--color-blue-400);
+  z-index: 50;
+  
+  /* Keep flex container persistent for smooth transitions */
+  display: flex;
+  flex-direction: column;
+
+  /* Smooth Hidden State */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu-panel-list {
+  list-style: none;
+  padding-top: 3.2rem;
+  padding-right: 3.2rem;
+  text-decoration: none;
+  font-size: 1.75rem;
+  gap: 3rem;
+  color: var(--color-white);
+  cursor: pointer;
+  text-align: center;
+}
+
+.menu-panel-list a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.menu-panel-list a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  color: var(--color-white);
+}
+
+.overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100%);
+  background-color: var(--color-black-overlay);
+  z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -230,6 +303,19 @@ footer {
   .stat-icon{
     width: 2rem;
     height: 2rem;
+  }
+
+  .menu-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 27.5%;
+    height: calc(100vh - 100%);
+  }
+
+  .menu-panel-list {
+    font-size: 2rem;
+    text-align: right;
   }
 
   footer {

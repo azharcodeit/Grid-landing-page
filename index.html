@@ -10,24 +10,37 @@
 </head>
 
 <body>
-  <header class="header">
-    <nav class="nav">
-      <a href="#" class="nav-logo">
-        <div>
-          <img src="./assets/images/favicon-32x32.png" alt="Bridge Collective" class="nav-logo-img">
-          Bridge Collective
-        </div>
-      </a>
-      <button class="nav-menu" aria-expanded="false" aria-label="Open menu">
-        <img src="./assets/images/icon-menu.svg" alt="Open menu">
-      </button>
-    </nav>
-  </header>
+  <div class="header-wrapper" id="header-wrapper">
+    <header class="header">
+      <nav class="nav">
+        <a href="#" class="nav-logo">
+          <div>
+            <img src="./assets/images/favicon-32x32.png" alt="Bridge Collective" class="nav-logo-img">
+            Bridge Collective
+          </div>
+        </a>
+        <button id="nav-menu" aria-expanded="false" aria-label="Open menu">
+          <img src="./assets/images/icon-menu.svg" id="nav-menu-icon" alt="Open menu">
+        </button>
+      </nav>
+    </header>
+    <div class="overlay"  id="overlay" aria-hidden="true"></div>
+    <div class="menu-panel" id="menu-panel" aria-hidden="true">
+        <ul class="menu-panel-list">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Our Work</a></li>
+          <li><a href="#">Partners</a></li>
+          <li><a href="#">Annual Report</a></li>
+          <li><a href="#">Donate</a></li>
+        </ul>
+      </div>
+  </div>
 
   <main class="main">
     <div class="hero">
       <h1>A classroom for every child.</h1>
-      <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
+      <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a
+        graduate tomorrow.</p>
     </div>
 
     <div class="stats">
@@ -82,19 +95,7 @@
     <p>Registered charity 12345678</p>
   </footer>
 
-  <!-- Menu panel — hidden until the hamburger is activated -->
-  <div class="menu-panel">
-    <div class="menu-panel-header">
-      <button class="menu-panel-close" aria-label="Close menu">Close</button>
-    </div>
-    <ul class="menu-panel-list">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Our Work</a></li>
-      <li><a href="#">Partners</a></li>
-      <li><a href="#">Annual Report</a></li>
-      <li><a href="#">Donate</a></li>
-    </ul>
-  </div>
+  <script src="main.js"></script>
 </body>
 
 </html>
